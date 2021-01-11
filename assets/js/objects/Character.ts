@@ -2,7 +2,6 @@ import * as PIXI from 'pixi.js';
 import Vector from '../utils/Vector';
 import Entity from './Entity';
 import PlayerConfig from '../utils/PlayerConfig';
-import Collider from '../components/Collider';
 import { sign } from '../utils/EtherMath';
 import { MaterialBlock } from './MaterialBlock';
 

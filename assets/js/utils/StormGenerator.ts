@@ -55,7 +55,7 @@ export default class StormGenerater {
             damager.velocity = new Vector(0, speed);
         }
 
-        this.nextDamagerTime += randomFloat(0, 1);
+        this.nextDamagerTime += randomFloat(0, 0.1);
         return damager;
     }
 }
