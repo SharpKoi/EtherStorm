@@ -77,7 +77,9 @@ export default class Entity extends PIXI.AnimatedSprite {
 
     onMove(offsetX: number, offsetY: number) {
         // called when the x and y changed
-        this.collider = this.collider.shift(offsetX, offsetY);
+        if(this.collider) {
+            this.collider = this.collider.shift(offsetX, offsetY);
+        }
     }
 
     checkGroundedOn(other: Entity) {

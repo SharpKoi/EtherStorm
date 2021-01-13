@@ -9,14 +9,12 @@ export default class Vector {
         this.y = y;
     }
 
-    add(vecter: Vector) {
-        this.x += vecter.x;
-        this.y += vecter.y;
+    add(vector: Vector) {
+        return new Vector(this.x + vector.x, this.y + vector.y);
     }
 
-    substract(vecter: Vector) {
-        this.x -= vecter.x;
-        this.y -= vecter.y;
+    substract(vector: Vector) {
+        return new Vector(this.x - vector.x, this.y - vector.y);
     }
 
     floor() {

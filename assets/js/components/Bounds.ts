@@ -1,3 +1,5 @@
+import Vector from "../utils/Vector";
+
 export default class Bounds {
     minX: number
     minY: number
@@ -17,6 +19,10 @@ export default class Bounds {
 
     get height() {
         return this.maxY - this.minY;
+    }
+
+    get center() {
+        return new Vector(this.minX + this.width / 2, this.minY + this.height / 2);
     }
 
     intersect(other: Bounds) {

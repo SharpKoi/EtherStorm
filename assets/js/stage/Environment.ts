@@ -6,8 +6,8 @@ export default
 {
     DemoStage: {
         gravity: 9.8,
-        safeTime: 30,
-        stormTime: 20,
+        safeTime: 60,
+        stormTime: 1,
         terrainColliders: [
             {
                 minX: 0,

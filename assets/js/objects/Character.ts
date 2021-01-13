@@ -104,6 +104,6 @@ export default class Character extends Entity {
      */
     applyForce(force: Vector) {
         let acceleration = new Vector(force.x / this.mass, force.y / this.mass);
-        this.velocity.add(acceleration);
+        this.velocity = this.velocity.add(acceleration);
     }
 }

@@ -18,6 +18,7 @@ import steelBlockTex from '../../res/tileset/steel.png';
 import diamondBlockTex from '../../res/tileset/diamond.png';
 import StormGenerater from '../utils/StormGenerator';
 import { FallingDamager } from '../objects/FallingDamager';
+import Vector from '../utils/Vector';
 
 export default class Stage {
     gameover: boolean
@@ -130,9 +131,20 @@ export default class Stage {
                     // 碰撞情況太複雜，這裡不考慮兩動態物體的碰撞
                     // 雖然隕石以及主角都是動態物體且需被判斷，但無需進行物理碰撞運算
                     if(other.velocity.norm() == 0) {
-                        if(e.collider.predictCollide(other.collider, offsetX, offsetY)) {
+                        if(e.collider.predictVertexCollide(other.collider, offsetX, offsetY)) {
+                            // 如果已經著陸在其他collider上且y軸velocity向下，則實體只會有x軸上的velocity
+                            console.log('vertex collision test');
+                            if(e.grounded && e.velocity.y > 0) {
+                                offsetY = 0;
+                                e.velocity.y = 0;
+                            }
+                            //如果實體同時具有x及y的速度，則不可移動
+                            if(e.velocity.x != 0 && e.velocity.y != 0) {
+                                offsetX = 0; offsetY = 0;
+                                e.velocity = Vector.zero();
+                            }
+                        }else if(e.collider.predictCollide(other.collider, offsetX, offsetY)) {
                             if(e.collider.maxY <= other.collider.minY) {
-                                // entity is above other
                                 offsetY = other.collider.minY - e.collider.maxY;
                                 e.velocity.y = 0;
                             }else if(other.collider.maxY <= e.collider.minY) {
@@ -180,6 +192,7 @@ export default class Stage {
         this.uiClock.text = Math.floor(this.currentTime).toString();
         this.preCalculate(deltaTime);
         
+        // destroy  dead entities
         let toDestroy: Entity[] = [];
         this.entities.forEach(entity => {
             if(entity.health <= 0) {
@@ -313,6 +326,3 @@ export default class Stage {
         }
     }
 }
-
-// export const demoStage = new Stage(Environment.DemoStage);
-// export const stage1 = new Stage(Environment.Stage1);
