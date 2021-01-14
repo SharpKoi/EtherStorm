@@ -71,7 +71,7 @@ export default class Entity extends PIXI.AnimatedSprite {
         // override
     }
 
-    onDead() {
+    onDead(onComplete: Function) {
         // override
     }
 

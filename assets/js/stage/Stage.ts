@@ -278,7 +278,7 @@ export default class Stage {
                                                      matBlock.x + 32, 
                                                      matBlock.y, 
                                                      false);
-                    matBlock.velocity.y = 100;
+                    matBlock.velocity.y = 200 - (4-i);
                     this.bornEntity(matBlock, 32*slot, -32*(mats.length - i));
 
                     matBlock.on('pointerdown', (event: PIXI.InteractionEvent) => {
