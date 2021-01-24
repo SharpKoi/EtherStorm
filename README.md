@@ -11,6 +11,7 @@ A game that you need to control the character to build a shelter before ether st
 - [ ] Pause
 - [ ] Prestage(故事劇情)
 - [ ] Multiple waves of ether storm
+- [ ] Multiple stages
 ### Feedback
 - [ ] block take prompt
 - [ ] block place prompt

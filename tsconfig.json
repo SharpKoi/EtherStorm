@@ -4,7 +4,7 @@
       "target": "es5",
       "noImplicitAny": true,
       "allowSyntheticDefaultImports": true,
-      "strictNullChecks": true,
+      "strictNullChecks": false,
       "moduleResolution": "node",
       "resolveJsonModule": true
     }

@@ -1,0 +1,56 @@
+// sfx selection
+storm coming:
+    - 
+block on damage: 
+    - BulletDropOn.wav
+    - DefiniteHit.wav
+block on dead:
+
+block on access:
+
+block on access denied:
+    - GetTheSpaceItem.wav
+    - InvalidTarget.wav
+
+block on placed:
+
+player on damage:
+    - HitOnMe.wav
+
+player on dead:
+
+player on jump:
+
+player on landing:
+
+on passed:
+
+on failed:
+
+animals 
+other:
+    - CheckMenuItem.wav
+    - FollowingCoordinates.wav
+    - ItemSelected.wav
+    - OptionSelect.wav
+
+
+// collision for two dynamic objects
+let _offsetX = other.velocity.x * deltaTime * 8;
+let _offsetY = other.velocity.y * deltaTime * 8;
+if(e.collider && other.collider) {
+    if(!e.collider.isTrigger && !other.collider.isTrigger) {
+        if(e.collider.predictCollide(
+                other.collider.shift(_offsetX, _offsetY), offsetX, offsetY)) {
+            //追撞 (--> ->) or 互撞 (-> <-)
+            if(sign(offsetX) + sign(_offsetX) != 0) {
+                // 誰追撞誰
+                
+            }else {
+                //互撞
+            }
+        }
+    }else {
+
+    }
+}
