@@ -1,4 +1,4 @@
-import URL_TILEMAP from '../assets/res/game_map_16x16.png';
+// import URL_TILEMAP from '../assets/res/game_map_16x16.png';
 
 /**
  * The environment config for each stage. 
@@ -10,7 +10,7 @@ export default
         gravity: 9.8,
         safeTime: 20,
         stormTime: 40,
-        terrainTexture: URL_TILEMAP,
+        terrainTexture: '../assets/res/game_map_16x16.png',
         terrainColliders: [
             {
                 minX: 0,

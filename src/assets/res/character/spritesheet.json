@@ -1,0 +1,38 @@
+{
+	"animations": {
+		"idle": [
+			"./idle/frame_0.png",
+			"./idle/frame_1.png",
+			"./idle/frame_2.png",
+			"./idle/frame_3.png",
+			"./idle/frame_4.png",
+			"./idle/frame_5.png",
+			"./idle/frame_6.png",
+			"./idle/frame_7.png",
+			"./idle/frame_8.png",
+			"./idle/frame_9.png",
+			"./idle/frame_10.png",
+			"./idle/frame_11.png"
+		],
+		"run": [
+			"./run/frame_0.png",
+			"./run/frame_1.png",
+			"./run/frame_2.png",
+			"./run/frame_3.png",
+			"./run/frame_4.png",
+			"./run/frame_5.png",
+			"./run/frame_6.png",
+			"./run/frame_7.png",
+		],
+		"jump": [
+			"./jump/jump.png"
+		],
+		"midair": [
+			"./mid-air/frame_0.png",
+			"./mid-air/frame_1.png"
+		],
+		"falling": [
+			"./falling/landing.png"
+		]
+	}
+}

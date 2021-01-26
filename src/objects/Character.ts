@@ -1,10 +1,10 @@
 import * as PIXI from 'pixi.js';
 import Vector from '../utils/Vector';
-import PlayerConfig from '../config/PlayerConfig';
 import { sign } from '../utils/EtherMath';
 import { MaterialBlock } from './MaterialBlock';
 import AnimateEntity from './AnimateEntity';
 import State from '../components/State';
+import { PlayerConfig } from '../config/Config';
 
 export enum AnimationState {
     Idle,
@@ -59,44 +59,48 @@ export default class Character extends AnimateEntity {
 
     // Animation state
     onIdle() {
+        let states = PIXI.Loader.shared.resources[PlayerConfig.spritesheet].spritesheet.animations
         if(this.state == AnimationState.Run || this.state == AnimationState.Falling) {
             this.state = AnimationState.Idle;
-            this.textures = PlayerConfig.states.Idle;
+            this.textures = states.idle;
             this.animationSpeed = 0.2;
             this.play();
         }
     }
 
     onRun() {
+        let states = PIXI.Loader.shared.resources[PlayerConfig.spritesheet].spritesheet.animations
         if(this.state == AnimationState.Idle || this.state == AnimationState.Falling) {
             this.state = AnimationState.Run;
-            this.textures = PlayerConfig.states.Run;
+            this.textures = states.Run;
             this.animationSpeed = 0.2;
             this.play();
         }
     }
 
     onJump() {
-        // TODO: set jump textures
+        let states = PIXI.Loader.shared.resources[PlayerConfig.spritesheet].spritesheet.animations
         if(this.state == AnimationState.Idle || this.state == AnimationState.Run) {
             this.state = AnimationState.Jump;
-            this.textures = PlayerConfig.states.Jump;
+            this.textures = states.Jump;
         }
     }
 
     onMidair() {
+        let states = PIXI.Loader.shared.resources[PlayerConfig.spritesheet].spritesheet.animations
         if(this.state == AnimationState.Jump) {
             this.state = AnimationState.Midair;
-            this.textures = PlayerConfig.states.MidAir;
+            this.textures = states.MidAir;
             this.animationSpeed = 1;
             this.play();
         }
     }
 
     onFalling() {
+        let states = PIXI.Loader.shared.resources[PlayerConfig.spritesheet].spritesheet.animations
         if(this.state != AnimationState.Jump && this.state != AnimationState.Falling) {
             this.state = AnimationState.Falling;
-            this.textures = PlayerConfig.states.Falling;
+            this.textures = states.Falling;
         }
     }
 

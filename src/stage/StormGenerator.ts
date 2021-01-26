@@ -1,9 +1,6 @@
 import * as PIXI from 'pixi.js';
+import { DamagerInfo } from '../config/Config';
 
-import fallingRock_tex from '../assets/res/tileset/rock.png';
-import hail_tex from '../assets/res/tileset/ice.png';
-import fireball_tex from '../assets/res/tileset/fireball.png';
-import ether_tex from '../assets/res/tileset/ether.png';
 import { FallingDamager } from '../objects/FallingDamager';
 import { randomFloat, randomInt } from '../utils/EtherMath';
 import Vector from '../utils/Vector';
@@ -36,21 +33,14 @@ export default class StormGenerater {
     }
 
     generateRandomDamager(slotRange: [number, number], speedRange: [number, number]) {
-        let damagerMap = {
-            fallingRocks: [fallingRock_tex, 3],
-            hailstone: [hail_tex, 5],
-            fireballs: [fireball_tex, 8],
-            ether: [ether_tex, 20]
-        }
-
         let index = randomInt(0, 100);
         let x = randomInt(slotRange[0], slotRange[1]) * 32;
         let speed = randomFloat(speedRange[0], speedRange[1]);
         let damagerID = this.lotteryPool[index];
         let damager;
         if(damagerID == 'fallingRocks' || damagerID == 'hailstone' || damagerID == 'fireballs' || damagerID == 'ether') {
-            damager = new FallingDamager([PIXI.Texture.from(damagerMap[damagerID][0])], 
-                                             false, damagerMap[damagerID][1]);
+            damager = new FallingDamager([PIXI.Texture.from(DamagerInfo[damagerID].texture)], 
+                                             false, DamagerInfo[damagerID].damage);
             damager.setX(x);
             damager.velocity = new Vector(0, speed);
         }

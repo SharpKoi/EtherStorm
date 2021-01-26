@@ -1,0 +1,184 @@
+{
+	"frames": {
+		"explosion-10.png": {
+			"frame": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"sourceSize": {
+				"w": 32,
+				"h": 32
+			}
+		},
+		"explosion-11.png": {
+			"frame": {
+				"x": 32,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"sourceSize": {
+				"w": 32,
+				"h": 32
+			}
+		},
+		"explosion-12.png": {
+			"frame": {
+				"x": 64,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"sourceSize": {
+				"w": 32,
+				"h": 32
+			}
+		},
+		"explosion-13.png": {
+			"frame": {
+				"x": 0,
+				"y": 32,
+				"w": 32,
+				"h": 32
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"sourceSize": {
+				"w": 32,
+				"h": 32
+			}
+		},
+		"explosion-14.png": {
+			"frame": {
+				"x": 32,
+				"y": 32,
+				"w": 32,
+				"h": 32
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"sourceSize": {
+				"w": 32,
+				"h": 32
+			}
+		},
+		"explosion-15.png": {
+			"frame": {
+				"x": 64,
+				"y": 32,
+				"w": 32,
+				"h": 32
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"sourceSize": {
+				"w": 32,
+				"h": 32
+			}
+		},
+		"explosion-16.png": {
+			"frame": {
+				"x": 0,
+				"y": 64,
+				"w": 32,
+				"h": 32
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"sourceSize": {
+				"w": 32,
+				"h": 32
+			}
+		},
+		"explosion-17.png": {
+			"frame": {
+				"x": 32,
+				"y": 64,
+				"w": 32,
+				"h": 32
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 32
+			},
+			"sourceSize": {
+				"w": 32,
+				"h": 32
+			}
+		}
+	},
+	"animations": [
+		"explosion-10.png",
+		"explosion-11.png",
+		"explosion-12.png",
+		"explosion-13.png",
+		"explosion-14.png",
+		"explosion-15.png",
+		"explosion-16.png",
+		"explosion-17.png"
+	],
+	"meta": {
+		"app": "https://github.com/piskelapp/piskel/",
+		"version": "1.0",
+		"image": "explosion-1.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 96,
+			"h": 96
+		}
+	}
+}

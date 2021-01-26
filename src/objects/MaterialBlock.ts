@@ -18,7 +18,7 @@ export class MaterialBlock extends Entity {
         this.explosionFrames = []
         this.exploding = false;
         for(let i = 0; i < 8; i++) {
-            this.explosionFrames.push(PIXI.Loader.shared.resources[`explosion1_frame_${i}`].texture);
+            this.explosionFrames.push(PIXI.Loader.shared.resources[`explosion_1`].spritesheet.animations);
         }
     }
 

@@ -5,9 +5,9 @@ import Stage from './stage/Stage';
 import StageManager from "./stage/StageManager";
 import Collider from './components/Collider';
 import Character from './objects/Character';
-import PlayerConfig from './config/PlayerConfig';
 import State from './components/State';
 import Vector from './utils/Vector';
+import { PlayerConfig } from './config/Config';
 
 export default class GameManager {
     app: PIXI.Application
@@ -189,8 +189,9 @@ export default class GameManager {
     }
 
     enterGame(stageID: string) {
-        const player = new Character(PlayerConfig.states.Idle, 1, 1, 15, false, 
-                                        new State("Idle", PlayerConfig.states.Idle));
+        let spritesheet = PIXI.Loader.shared.resources[PlayerConfig.spritesheet].spritesheet.animations;
+        const player = new Character(spritesheet.idle, 1, 1, 15, false, 
+                                        new State("Idle", spritesheet.idle));
         player.collider = new Collider(player.x - 28 / 2, 
                                     player.y - 51,
                                     player.x + 28 / 2, 

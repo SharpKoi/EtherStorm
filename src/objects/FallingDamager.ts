@@ -20,7 +20,7 @@ export class FallingDamager extends Entity {
         this.exploding = false;
         this.explosionFrames = [];
         for(let i = 0; i < 8; i++) {
-            this.explosionFrames.push(PIXI.Loader.shared.resources[`explosion0_frame_${i}`].texture);
+            this.explosionFrames.push(PIXI.Loader.shared.resources[`explosion_0`].spritesheet.animations);
         }
     }
 

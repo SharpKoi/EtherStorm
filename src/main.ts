@@ -8,7 +8,7 @@ PixiPlugin.registerPIXI(PIXI);
 gsap.registerPlugin(PixiPlugin);
 
 import GameManager from './GameManager';
-import { PixiApp, BlockInfo, SoundFX, Fonts, ExplosionTextures } from './config/Config';
+import { PixiApp, BlockInfo, SoundFX, Fonts, ExplosionSpritesheets, PlayerConfig } from './config/Config';
 
 const app = new PIXI.Application({width: PixiApp.screen.width, height: PixiApp.screen.height});
 const game = new GameManager(app);
@@ -16,16 +16,20 @@ const game = new GameManager(app);
 const loadPixiAssets = () => {
     let resLoader = PIXI.Loader.shared;
     return new Promise(resolve => {
+        //character textures
+        resLoader.add(PlayerConfig.spritesheet);
+
         // block textures
         Object.keys(BlockInfo).forEach((key: keyof typeof BlockInfo) => {
             resLoader.add(key, BlockInfo[key].texture);
         });
 
         //explosion frames
-        ExplosionTextures.forEach((frames, index) => {
-            Object.keys(frames).forEach((key: keyof typeof frames) => {
-                resLoader.add(`explosion${index}_${String(key)}`, frames[key]);
-            })
+        ExplosionSpritesheets.forEach((sheet, index) => {
+            resLoader.add(`explosion_${index}`, sheet);
+            // Object.keys(frames).forEach((key: keyof typeof frames) => {
+            //     resLoader.add(`explosion${index}_${String(key)}`, frames[key]);
+            // })
         })
 
         // sound effects
@@ -35,8 +39,7 @@ const loadPixiAssets = () => {
 
         // font
         Object.keys(Fonts).forEach((key: keyof typeof Fonts) => {
-            // loading font file which is imported will cause a bug.
-            // resLoader.add(key, Fonts[key]);
+            resLoader.add(key, Fonts[key]);
         });
 
         resLoader.load(resolve);
